@@ -153,9 +153,9 @@ func parseBool(value string) (bool, bool) {
 
 func (f *FlagSet) GetString(name string) (string, bool) {
 	if v, ok := f.options[name]; ok {
-		switch v.(type) {
+		switch _v := v.(type) {
 		case string:
-			return v.(string), true
+			return _v, true
 		}
 	}
 
@@ -164,9 +164,9 @@ func (f *FlagSet) GetString(name string) (string, bool) {
 
 func (f *FlagSet) GetBool(name string) (bool, bool) {
 	if v, ok := f.options[name]; ok {
-		switch v.(type) {
+		switch _v := v.(type) {
 		case bool:
-			return v.(bool), true
+			return _v, true
 		}
 	}
 
