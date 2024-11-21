@@ -10,6 +10,7 @@ import (
 // go run main.go -a str1 -int=123 -b -- 1111111 222222 333333
 
 func main() {
+	looseflag.CommandLine.SetBoolArgs("b")
 	err := looseflag.Parse()
 	if err != nil {
 		panic(err)

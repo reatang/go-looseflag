@@ -90,7 +90,7 @@ func TestFlagSet_Parse(t *testing.T) {
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
 			f := NewFlagSet(tt.name, 0)
-			f.SetBoolVals(tt.isBool...)
+			f.SetBoolArgs(tt.isBool...)
 			if err := f.Parse(tt.args.args); (err != nil) != tt.wantErr {
 				t.Errorf("Parse() error = %v, wantErr %v", err, tt.wantErr)
 			}

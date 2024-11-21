@@ -27,7 +27,7 @@ type FlagSet struct {
 	beforeArgs []string
 	afterArgs  []string
 
-	isBoolValue []string
+	isBoolArgs []string
 
 	options map[string]any
 }
@@ -40,13 +40,13 @@ func NewFlagSet(name string, errorHandling ErrorHandling) *FlagSet {
 		beforeArgs: make([]string, 0),
 		afterArgs:  make([]string, 0),
 
-		isBoolValue: make([]string, 0),
-		options:     make(map[string]any),
+		isBoolArgs: make([]string, 0),
+		options:    make(map[string]any),
 	}
 }
 
-func (f *FlagSet) SetBoolVals(b ...string) {
-	f.isBoolValue = append(f.isBoolValue, b...)
+func (f *FlagSet) SetBoolArgs(b ...string) {
+	f.isBoolArgs = append(f.isBoolArgs, b...)
 }
 
 func (f *FlagSet) Parse(args []string) error {
@@ -77,7 +77,7 @@ func (f *FlagSet) Parse(args []string) error {
 				} else {
 					f.options[name[:eqIndex]] = v
 				}
-			} else if sliceContains(f.isBoolValue, name) {
+			} else if sliceContains(f.isBoolArgs, name) {
 				f.options[name] = true
 			} else {
 				if len(args) == 0 {
