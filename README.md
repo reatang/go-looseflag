@@ -13,7 +13,7 @@ package main
 import (
 	"fmt"
 
-	looseflag "github.com/reatang/looseflag"
+	looseflag "github.com/reatang/go-looseflag"
 )
 
 // go run main.go -a str1 -b -int=123 1111111 222222 333333
