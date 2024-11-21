@@ -3,7 +3,7 @@
 // 当前只实现了 string/bool/int 的解析
 //
 // 想要看到更多的描述内容, 请访问 https://github.com/reatang/go-looseflag
-package looseflag // Package github.com/reatang/looseflag
+package looseflag // Package github.com/reatang/go-looseflag
 
 import (
 	"fmt"
