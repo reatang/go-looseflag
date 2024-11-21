@@ -1,13 +1,14 @@
 # go-looseflag
 
-不兼容go flag，以宽松的方式解析命令行参数的库。Incompatible with go flag, library that parses command-line parameters in a loose manner
+不兼容go flag，以宽松的方式解析命令行参数的库。
+
+该库主要面向：主命令调用子命令已不可修改，但是需要开发一个适配的新子命令。
 
 ## 功能
 
 无须预定义参数，直接获取命令行参数的值
 
 ```go
-@ -0,0 +1,31 @@
 package main
 
 import (
